@@ -1,0 +1,17 @@
+@import '~modularscale-sass/stylesheets/modularscale';
+
+$modularscale: (
+  base: 1em,
+  ratio: 1.5
+)
+
+$display-font-stack: 'Raleway', Arial, sans-serif;
+$body-font-stack: 'Open Sans', Arial, sans-serif;
+
+$test-color: #333333;
+$bg-color: #f9f9f9;
+
+html {
+  color: $test-color;
+  background-color: $bg-color;
+}
