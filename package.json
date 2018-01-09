@@ -26,6 +26,7 @@
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
+    "typi": "^3.1.2",
     "typography": "^0.16.6",
     "webpack": "^3.10.0"
   }

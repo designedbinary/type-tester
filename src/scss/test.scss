@@ -1,9 +1,66 @@
-@import '~modularscale-sass/stylesheets/modularscale';
+@import 'normalize';
+@import '~typi/scss/typi';
 
+@import '~modularscale-sass/stylesheets/modularscale';
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Raleway:300,400,700');
+
+// base typographic modular base scale
 $modularscale: (
   base: 1em,
-  ratio: 1.5
-)
+  ratio: 1.333
+);
+
+$breakpoints: (
+  small: 600px,
+  large: 1200px
+);
+
+// modular scale at different breakpoints
+$typi-ms: (
+  null: 1.333,
+  small: 2,
+  large: 3
+);
+
+$typi: (
+  base: (
+    null: (16px, 1.4),
+    small: (18px),
+    large: (20px)
+  ),
+  h1: (
+    null: 1,
+    small: 2,
+    large: 3
+  ),
+  h2: (
+    null: 6,
+    small: 6,
+    large: 6
+  ),
+  h3: (
+    null: 1,
+    small: 2,
+    large: 3
+  ),
+  h4: (
+    null: 1,
+    small: 2,
+    large: 3
+  ),
+  h5: (
+    null: 1,
+    small: 2,
+    large: 3
+  ),
+  h6: (
+    null: 1,
+    small: 2,
+    large: 3
+  )
+);
+
+@include typi-init;
 
 $display-font-stack: 'Raleway', Arial, sans-serif;
 $body-font-stack: 'Open Sans', Arial, sans-serif;
@@ -14,4 +71,30 @@ $bg-color: #f9f9f9;
 html {
   color: $test-color;
   background-color: $bg-color;
+  font-family: $body-font-stack;
 }
+
+//font-render for legibility
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $display-font-stack;
+}
+
+// typi automatically creates classes based on font maps
+//@include typi-create-classes;
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @include typi('h#{$i}');
+  }
+}
+
+/*h2{
+  @include typi('h2');
+}*/
