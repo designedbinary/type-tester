@@ -10,54 +10,84 @@ $modularscale: (
   ratio: 1.333
 );
 
-$breakpoints: (
-  small: 600px,
-  large: 1200px
+$breakpoints: ( 
+  s: 320px,
+  m: 600px,
+  l: 1200px,
 );
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+      $value: map-get($breakpoints, $breakpoint);
+       
+      @media screen and (min-width: $value) {
+          @content;
+      }
+  }
+   
+  @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}
 
 // modular scale at different breakpoints
 $typi-ms: (
   null: 1.333,
-  small: 2,
-  large: 3
+  s: 1.2,
+  m: 1.333,
+  l: 1.333
 );
 
 $typi: (
   base: (
-    null: (16px, 1.4),
-    small: (18px),
-    large: (20px)
+    null: (16px, 1.5),
+    s: (15px),
+    m: (16px),
+    l: (18px)
   ),
   h1: (
-    null: 1,
-    small: 2,
-    large: 3
+    null: 5,
+    s: (5, 1.25),
+    m: (5, 1.25),
+    l: (5, 1.25)
   ),
   h2: (
-    null: 6,
-    small: 6,
-    large: 6
+    null: 4,
+    s: 4,
+    m: 4,
+    l: 4
   ),
   h3: (
-    null: 1,
-    small: 2,
-    large: 3
+    null: 3,
+    s: 3,
+    m: 3,
+    l: 3
   ),
   h4: (
-    null: 1,
-    small: 2,
-    large: 3
+    null: 2,
+    s: 2,
+    m: 2,
+    l: 2
   ),
   h5: (
     null: 1,
-    small: 2,
-    large: 3
+    s: 1,
+    m: 1,
+    l: 1
   ),
   h6: (
-    null: 1,
-    small: 2,
-    large: 3
+    null: 0,
+    s: 0,
+    m: 0,
+    l: 0
   )
+);
+
+$typography-weight: (
+  h1: 300,
+  h2: 300,
+  h3: 700,
+  h4: 700,
+  h5: 700,
+  h6: 700
 );
 
 @include typi-init;
@@ -65,20 +95,60 @@ $typi: (
 $display-font-stack: 'Raleway', Arial, sans-serif;
 $body-font-stack: 'Open Sans', Arial, sans-serif;
 
-$test-color: #333333;
+$text-color: #333333;
 $bg-color: #f9f9f9;
 
+$min-readable-character-width: 18.75em; // = 300px @ 16px base font
+$max-readable-character-width: 37.5em; // = 600px @ 16px base font
+$column-minimum-margins: 2em;
+
+
 html {
-  color: $test-color;
+  color: $text-color;
   background-color: $bg-color;
   font-family: $body-font-stack;
+  
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  -ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for WebKit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
 
 //font-render for legibility
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  padding: $column-minimum-margins;
+  width: 100%;
+  max-width: $max-readable-character-width;
+  //min-width: $min-readable-character-width;/**/
+
+  @include respond-to(s){
+    margin-left: 0;
+  }
+  @include respond-to(m) {
+    margin-left: 4em;
+  }
+  @include respond-to(l) {
+    margin-left: 15em;
+  }
 }
 
 
@@ -92,6 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 @for $i from 1 through 6 {
   h#{$i} {
     @include typi('h#{$i}');
+    font-weight: map-get($typography-weight , h#{$i} );
   }
 }
 

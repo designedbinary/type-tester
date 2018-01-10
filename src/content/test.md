@@ -6,6 +6,11 @@ With the [General Data Protection Regulation (GDPR)](https://en.wikipedia.org/wi
 
 But the new regulations are not as daunting as they seem. Privacy and data protection rules have been getting stricter and enforcement has been getting tougher for years, and most companies are already required to [secure business data](https://www.virtru.com/blog/secure-business-data/) against hackers and other threats. Here’s why you shouldn’t panic just yet.
 
+character count for this line is about 53 characters
+
+the character count for this much longer line is about 70 characters.
+
+
 ## GDPR Checklist: 5 Reasons Not to Panic
 
 ### 1. GDPR is what you’re already doing under compliance requirements.
