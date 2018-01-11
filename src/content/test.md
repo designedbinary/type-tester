@@ -4,7 +4,7 @@ With the [General Data Protection Regulation (GDPR)](https://en.wikipedia.org/wi
 
 > Oktoberfest is super awesome, we all should try going at least once.
 
-But the new regulations are not as daunting as they seem. Privacy and data protection rules have been getting stricter and enforcement has been getting tougher for years, and most companies are already required to [secure business data](https://www.virtru.com/blog/secure-business-data/) against hackers and other threats. Here’s why you shouldn’t panic just yet.
+<span class="sixteenpx">But the new regulations are not as daunting as they seem. Privacy and data protection rules have been getting stricter and enforcement has been getting tougher for years, and most companies are already required to [secure business data](https://www.virtru.com/blog/secure-business-data/) against hackers and other threats. Here’s why you shouldn’t panic just yet.</span>
 
 character count for this line is about 53 characters
 

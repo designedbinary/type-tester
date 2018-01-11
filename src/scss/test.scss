@@ -83,8 +83,8 @@ $typi: (
 
 $typography-weight: (
   h1: 300,
-  h2: 300,
-  h3: 700,
+  h2: 400,
+  h3: 400,
   h4: 700,
   h5: 700,
   h6: 700
@@ -169,3 +169,7 @@ h1, h2, h3, h4, h5, h6 {
 /*h2{
   @include typi('h2');
 }*/
+
+.sixteenpx {
+  font-size: 16px;
+}
