@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "modularscale-sass": "^3.0.4",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
+    "static-site-generator-webpack-plugin": "^3.4.1",
     "style-loader": "^0.19.1",
     "typi": "^3.1.2",
     "typography": "^0.16.6",

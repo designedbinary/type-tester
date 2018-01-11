@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const marked = require("marked");
 //const renderer = new marked.Renderer();
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 const config = {
   entry: './src/js/app.js',
